@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(233, 233, 0);
+}
+#links{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 1vh;
+}
+#links a{
+    width: 5%;
+    height: 80%;
+}
+#links a:hover{
+    transform: scale(1.1);
+}
+#links img{
+    width: 80%;
+    height: 80%;
+}
+#links p{
+    font-size: 1.5vw;
+}
+#links div{
+    width: 25%;
+}
+#hello{
+    height: 60vh;
+    width: 60vw;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "img h1"
+        "img p";
+}
+#profile{
+    grid-area: img;
+    width: 80%;
+    height: 85%;
+    border-radius: 50%;
+    animation: img 1s linear;
+    box-shadow: 0px 0px 10px 10px black;
+}
+@keyframes img {
+    0%{
+        opacity: 0%;
+    }
+}
+#hello h1{
+    grid-area: h1;
+    font-size: 6vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    padding-top: 10vh;
+    color: white;
+    animation: name 3s ease-in-out, colored 6s infinite;
+}
+@keyframes name {
+    0%{
+        transform: translateX(-25vw);
+        z-index: -1;
+        opacity: 0%;
+    }
+    50%{
+        z-index: -1;
+        opacity: 50%;
+    }
+}
+@keyframes colored {
+    0%{
+        color: white;
+    }
+    25%{
+        color: red;
+    }
+    50%{
+        color: green;
+    }
+    75%{
+        color: blue;
+    }
+}
+#hello p{
+    grid-area: p;
+    font-size: 4vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    animation: description 3s ease-in-out;
+}
+@keyframes description {
+    0%{
+        opacity: 0%;
+        transform: translateY(-100vh);
+    }
+}
+#footer{
+    height: 20vh;
+    width: 100vw;
+    background-color: black;
+}
+#line{
+    position: absolute;
+    height: 20vh;
+    width: 100vw;
+    margin: auto;
+    border-bottom: 5px solid black;
+    border-radius: 0% 0% 0% 100%;
+    background-color: rgb(233, 233, 0);
+}
+.ball{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+    border-radius: 50%;
+    border: 50px double black;
+}
+#ball1{
+    bottom: 5px;
+    right: 0;
+    animation: ball1 5s linear;
+    background-color: blue;
+}
+@keyframes ball1 {
+    0%{
+        transform: translate(-100vw,-100vh);
+    }
+    25%{
+        transform: translate(-75vw, -7vh);
+    }
+    50%{
+        transform: translate(-50vw, -3vh);
+    }
+    75%{
+        transform: translate(-25vw, 0vh);
+    }
+}
+#ball2{
+    bottom: 6px;
+    right: 100px;
+    animation: ball2 5s linear;
+    background-color: green;
+}
+@keyframes ball2 {
+    0%{
+        transform: translate(-100vw,-100vh);
+        opacity: 0%;
+    }
+    1%{
+        transform: translate(-100vw,-100vh);
+        opacity: 100%;
+    }
+    40%{
+        transform: translate(-75vw, -9vh);
+    }
+    60%{
+        transform: translate(-50vw, -3vh);
+    }
+    80%{
+        transform: translate(-25vw, 0vh);
+    }
+}
+#ball3{
+    bottom: 7px;
+    right: 200px;
+    animation: ball3 6s linear;
+    background-color: red;
+}
+@keyframes ball3 {
+    0%{
+        transform: translate(-100vw,-100vh);
+        opacity: 0%;
+    }
+    20%{
+        transform: translate(-100vw,-100vh);
+        opacity: 100%;
+    }
+    40%{
+        transform: translate(-75vw, -12vh);
+    }
+    60%{
+        transform: translate(-50vw, -3vh);
+    }
+    80%{
+        transform: translate(-25vw, 0vh);
+    }
+}
+#ball4{
+    bottom: 9px;
+    right: 300px;
+}#ball5{
+    bottom: 11px;
+    right: 400px;
+}
+#ball6{
+    bottom: 14px;
+    right: 500px;
+}
+#ball7{
+    bottom: 19px;
+    right: 600px;
+}
+@media (max-width: 450px){
+    #links{
+        height: 30vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
+        grid-template-areas:
+            "empty empty empty"
+            "freecodecamp linkedin github"
+            "email email email"
+            "zero zero zero";
+    }
+    .empty1{
+        grid-area: empty;
+    }
+    #freecodecamp{
+        grid-area: freecodecamp;
+        margin: auto;
+    }
+    #linkedin{
+        grid-area: linkedin;
+        margin: auto;
+    }
+    #github{
+        grid-area: github;
+        margin: auto;
+    }
+    #email{
+        grid-area: email;
+        margin: auto;
+    }
+    .empty2{
+        grid-area: zero;
+        margin: auto;
+    }
+    #links a{
+        width: 75%;
+    }
+    #links p{
+        font-size: 5vw;
+    }
+    #hello{
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    #profile{
+        height: 50%;
+        width: 70%;
+        margin: 0 auto;
+    }
+    #hello h1{
+        padding-top: 10%;
+        font-size: 15vw;
+        margin: auto;
+    }
+    #hello p{
+        font-size: 10vw;
+        margin-bottom: 10vh;
+    }
+    .ball, .ball1, .ball2, .ball3, #footer, #line{
+        opacity: 0%;
+        width: 0;
+        height: 0;
+    }
+}
